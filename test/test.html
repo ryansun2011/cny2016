@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{list-style:none;}
+        li{float:left;}
+        .li1{width:230px;}
+        input{width:200px;}
+        .li2{margin-left:100px;}
+        .ip3 ul {clear:both;}
+    </style>
+</head>
+<body>
+开始时间：<input type="text" class="ipt1" name="" value="2016-1-25"><br><br>
+结束时间：<input type="text" class="ipt2" name="" value="2016-1-26"><br><br>
+<input class="ipt3" type="button" name="" value="提交查询前50名人员">
+<div></div>
+
+
+<div class="ip3"></div>
+
+</body>
+<script src="js/jquery-2.1.4.js"></script>
+<script>
+    $('.ipt3').click(function(){
+        var ipt1 = $('.ipt1').val();
+        var ipt2 = $('.ipt2').val();
+        $.ajax({
+            url:'http://www.philips-campaign.com/cny2016/test/test.php',
+            dataType:'json',
+            type:'post',
+            data:{start:ipt1,end:ipt2}
+        }).done(function(data){
+            console.log(data)
+            var arr = data.info?data.info:[];
+            $('div').html('总人数:'+arr.length);
+            var str='';
+            for(var i=0;i<arr.length;i++){
+                str += '<ul><li class="li1">'+arr[i].id+'</li>' +
+                        '<li class="li1">'+arr[i].username+'</li>' +
+                        '<li class="li1">'+arr[i].telephone+'</li>' +
+                        '<li class="li1">'+arr[i].employee_number+'</li>' +
+                        '<li class="li1">'+arr[i].email+'</li>' +
+                        '<li class="li1">'+arr[i].score+'</li>' +
+                        '<li class="li1">'+arr[i].ctime+'</li></ul>';
+            }
+            $('.ip3').html(str);
+        })
+    })
+
+
+</script>
+</html>

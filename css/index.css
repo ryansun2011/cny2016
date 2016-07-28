@@ -1,0 +1,68 @@
+*{margin:0;padding:0;list-style: none;}
+html,body{width:100%;height:100%;}
+.container{
+    width:100%;
+    height:100%;
+    background:url(../img/one/onebg.jpg) no-repeat;
+   background-size: cover;
+   position:relative;
+   overflow: hidden;
+}
+.container .tuanyuan{
+    position:absolute;
+    left:0;
+    top:0;
+    z-index: 3;
+}
+.container .denglong{
+    position:absolute;
+    right:-47px;
+    top:-20px;
+    z-index: 3;
+}
+.container .shuzhi{
+    position:absolute;
+    top:255px;
+    left:355px;
+    z-index: 3;
+}
+.container .solgan{
+    position:absolute;
+    top:210px;
+    left:72px;
+    z-index: 4;
+}
+.container .baozu{
+    position:absolute;
+    left:0px;
+    top:200px;
+    z-index:3;
+}
+.container .haoyun{
+    position:absolute;
+    left:82px;
+    top:512px;
+    z-index: 3;
+}
+.container .enter_game{
+    display: block;
+    width:148px;
+    height:87px;
+    position:absolute;
+    left:145px;
+    bottom:264px;
+    z-index: 3;
+}
+.container .enter_order{display:block;width:148px;height:87px;position:absolute;left:342px;bottom:264px;z-index: 3;}
+.container .liwu{
+    position: absolute;
+    left:0;
+    bottom:0;
+    z-index: 2;
+}
+.container .logo{
+    position:absolute;
+    left:15px;
+    top:15px;
+    z-index: 8;
+}

@@ -1,0 +1,62 @@
+@import url('reset.css');
+
+/*game css start*/
+
+#container{
+    width:750px; /* 500 */
+    height:750px;
+    position:absolute;
+    left:-87px; 
+    top:-97px;
+}
+#container div{
+    float: left;
+    position:relative;
+   
+}
+#container div span{
+    
+    background:url(../img/two/gou.png) no-repeat;
+    position:absolute;
+    right:20px;
+    top:6px;
+    display: none; 
+    
+}
+.cur span{
+    display:block;
+}
+#container div img{
+    width:100px;
+    height:100px;
+    margin:0 auto;
+
+}
+.manageGame{
+   
+}
+.active {
+
+}
+#score{
+    display:block;width:84px;height:45px;line-height:45px;text-align: center;font-weight: bold;color:#ffed9f;
+    outline:none;
+    border:none;
+    position:absolute;
+    left:104px;
+    top:232px;
+    font-size:24px;
+}
+#restart{
+    position:absolute;
+    right:40px;
+    top:274px;
+    z-index: 2;
+}
+#linecvs{
+    /*display: none;*/
+    z-index: -10000;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+   }

@@ -1,0 +1,1076 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浓浓新年味好礼带回家</title>
+	<meta name="apple-touch-fullscreen" content="yes"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<meta name="viewport" content="target-densitydpi=device-dpi,width=640, user-scalable=no"/>
+	<script src="js/lib/jquery.js"></script>
+	<script src="js/dot2dot1.js"></script>
+	<script src="js/js.cookie.js"></script>
+	<script src='js/fastclick.js'></script>
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/dot2dot.css">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			-webkit-user-select: none;
+			user-select: none;
+			-webkit-touch-callout: none;
+			-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+			list-style: none;
+		}
+
+		input, textarea {
+			-webkit-user-select: auto;
+			user-select: auto;
+		}
+
+		html, body {
+			width: 100%;
+			height: 100%;
+		}
+
+		.total {
+			width: 100%;
+			height: 100%;
+			background: url(img/two/twobg.jpg) no-repeat;
+			background-size: cover;
+			position: relative;
+			overflow: hidden;
+			display: none;
+		}
+
+		.seclayer {
+			width: 100%;
+			height: 100%;
+		}
+
+		.logo {
+			position: absolute;
+			left: 15px;
+			top: 15px;
+			z-index: 10;
+		}
+
+		.gift {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			z-index: 3;
+		}
+
+		.giftgohome {
+			position: absolute;
+			left: 93px;
+			top: 20px;
+			z-index: 15;
+		}
+
+		.lantern {
+			position: absolute;
+			right: -25px;
+			top: -40px;
+			z-index: 8;
+		}
+
+		.haoyun {
+			position: absolute;
+			left: 160px;
+			top: 152px;
+			z-index: 11;
+		}
+
+		.music {
+			width: 49px;
+			height: 49px;
+			background: url(img/one/music1.png);
+			position: absolute;
+			right: 16px;
+			bottom: 16px;
+			z-index: 10;
+		}
+
+		.music.audio {
+			width: 49px;
+			height: 49px;
+			background: url(img/one/music.png);
+			position: absolute;
+			right: 16px;
+			bottom: 16px;
+			z-index: 10;
+		}
+
+		/*分数区域*/
+		.seclayer {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+
+		.seclayer .rule {
+			width: 315px;
+			height: 26px;
+			position: absolute;
+			left: 161px;
+			top: 238px;
+		}
+
+		.seclayer .result {
+			padding-left14px;
+			width: 148px;
+			height: 75px;
+			position: absolute;
+			left: 41px;
+			top: 239px;
+			background: url(img/two/time_score_bg.png) no-repeat;
+		}
+
+		.seclayer .result .score_result {
+			display: block;
+			width: 88px;
+			height: 32px;
+			line-height: 32px;
+			text-align: center;
+			font-weight: bold;
+			font-size: 22px;
+			color: #ffed9f;
+		}
+
+		.seclayer .result .score_number {
+			display: block;
+			width: 84px;
+			height: 32px;
+			line-height: 32px;
+			text-align: center;
+			font-weight: bold;
+			font-size: 45px;
+			color: #ffed9f;
+		}
+
+		.seclayer .result .time {
+			padding-left: 14px;
+			width: 148px;
+			height: 32px;
+			position: absolute;
+			left: 0px;
+			bottom: 0;
+		}
+
+		.seclayer .result .time .time_result {
+			display: block;
+			width: 62px;
+			height: 32px;
+			float: left;
+			line-height: 32px;
+			text-align: center;
+			font-size: 22px;
+			font-weight: bold;
+			color: #ffed9f;
+		}
+
+		.seclayer .result .time .time_number {
+			display: block;
+			width: 62px;
+			height: 32px;
+			float: left;
+			line-height: 32px;
+			text-align: center;
+			font-size: 22px;
+			font-weight: bold;
+			color: #ffed9f;
+		}
+
+		.scroe {
+			width: 136px;
+			height: 32px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			font-size: 22px;
+			line-height: 32px;
+		}
+
+		.xiangyun {
+			position: absolute;
+			left: 2px;
+			bottom: 0px;
+		}
+		.xinxi{
+			position:absolute;
+			left:156px;
+			top:302px;
+		}
+		/*游戏区域*/
+		.seclayer .gamezone {
+			width: 563px;
+			height: 548px;
+			position: absolute;
+			left: 40px;
+			top: 326px;
+			z-index: 16;
+			background: url(img/two/prize_kuang.png) no-repeat;
+			z-index: 1;
+		}
+
+		.seclayer .gamezone .product {
+			width: 107px;
+			height: 107px;
+			background: url(img/two/probg.png) no-repeat;
+			display: block;
+			float: left;
+			margin: 13px 15px 0 0;
+		}
+
+		/*活动详情*/
+		.seclayer .details {
+			width: 100%;
+			height: 100%;
+			background: url(img/two/tm.png) no-repeat;
+			z-index: 2;
+			position: absolute;
+			left: 0;
+			top: 0;
+			background-size: cover;
+		}
+
+		.seclayer .event {
+			width: 563px;
+			height: 548px;
+			position: absolute;
+			left: 40px;
+			top: 326px;
+			z-index: 16;
+			background: url(img/two/prize_kuang.png) no-repeat;
+		}
+
+		.seclayer .details .event .details_date {
+			position: absolute;
+			left: 25px;
+			top: 30px;
+		}
+
+		.startbtn {
+			width: 148px;
+			height: 87px;
+			position: absolute;
+			left: 113px;
+			bottom: 59px;
+			z-index: 11;
+		}
+
+		.details .event .det_pai_btn {
+			width: 148px;
+			height: 87px;
+			position: absolute;
+			right: 116px;
+			bottom: 58px;
+			z-index: 11;
+		}
+
+		/*开始页面*/
+		.seclayer .starpage {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			background: url(img/two/tm.png) no-repeat;
+			z-index: 10;
+			position: relative;
+			background-size: cover;
+		}
+
+		.seclayer .countdown {
+			position: absolute;
+			position: relative;
+			left: 214px;
+			top: 142px;
+			display: none;
+		}
+
+		.again_one {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			background: url(img/two/tm.png) no-repeat;
+			z-index: 2;
+			display: none;
+			left: 0;
+			top: 0;
+			background-size: cover;
+		}
+
+		.again_one .autoplay {
+			width: 563px;
+			height: 548px;
+			position: absolute;
+			left: 40px;
+			top: 326px;
+			z-index: 16;
+			background: url(img/two/prize_kuang.png) no-repeat;
+		}
+
+		.again_one .autoplay .get_score {
+			position: absolute;
+			left: 204px;
+			top: 56px;
+		}
+
+		.again_one .autoplay .score_result {
+			position: absolute;
+			left: 0;
+			top: 193px;
+			padding: 0 5px;
+			height: 80px;
+			line-height: 80px;
+			text-align: center;
+			font-size: 60px;
+			color: #d9bb7f;
+			width: 552px;
+			height: 80px;
+		}
+
+		.again_one_gift {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+		}
+
+		.again_one .autoplay .again_btn {
+			width: 168px;
+			height: 108px;
+			position: absolute;
+			left: 113px;
+			bottom: 60px;
+		}
+
+		.again_one .autoplay .Information {
+			width: 168px;
+			height: 108px;
+			position: absolute;
+			right: 90px;
+			bottom: 60px;
+		}
+
+		.again_one .autoplay .seeranking {
+			width: 168px;
+			height: 108px;
+			position: absolute;
+			left: 305px;
+			top: 380px;
+			display: none;
+		}
+		.fillin {
+			width: 100%;
+			height: 100%;
+			position: relative;
+			background: url(img/two/tm.png) no-repeat;
+			z-index: 2;
+			display: none;
+			background-size: cover;
+		}
+
+		.fillin .error {
+			width: 100%;
+			height: 30px;
+			position: absolute;
+			left: 0;
+			bottom: 124px;
+			font-size: 18px;
+			color: #f7dd95;
+			line-height: 30px;
+			text-align: center;
+		}
+
+		.fillin_gift {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+		}
+
+		.fillin .info_bar {
+			width: 563px;
+			height: 548px;
+			position: absolute;
+			left: 40px;
+			top: 326px;
+			z-index: 16;
+			background: url(img/two/prize_kuang.png) no-repeat;
+		}
+
+		.fillin .info_bar .frame {
+			width: 378px;
+			height: 336px;
+			position: absolute;
+			left: 98px;
+			top: 50px;
+			margin-top: 15px;
+		}
+
+		.fillin .tianxie {
+			position: absolute;
+			left: 178px;
+			top: 28px;
+		}
+
+		.fillin .info_bar .frame .name_text {
+			width: 378px;
+			height: 49px;
+			border: none;
+			background: url(img/two/bian.png) no-repeat;
+			outline: none;
+			margin-top: 16px;
+			font-size: 28px;
+			color: #d9bb7f;
+			text-align: center;
+			line-height: 41px;
+			font-weight: bold;
+		}
+
+		.fillin .info_bar .frame .name {
+			position: absolute;
+			left: 16px;
+			top: 30px;
+		}
+
+		.fillin .info_bar .frame .mobile {
+			position: absolute;
+			left: 16px;
+			top: 94px;
+		}
+
+		.fillin .info_bar .frame .gonghao {
+			position: absolute;
+			left: 16px;
+			top: 159px;
+		}
+
+		.fillin .info_bar .frame .email {
+			position: absolute;
+			left: 16px;
+			top: 223px;
+		}
+
+		.fillin .info_bar .frame .shuoming {
+			position: absolute;
+			left: 21px;
+			top: 295px;
+		}
+
+		.fillin .info_bar .again_two {
+			position: absolute;
+			left: 207px;
+			bottom: 30px;
+		}
+
+		.fillin .info_bar .again_info_btn {
+			position: absolute;
+			left: 110px;
+			top: 375px;
+		}
+
+		.ranking {
+			width: 100%;
+			height: 100%;
+			position: relative;
+			background: url(img/two/tm.png) no-repeat;
+			z-index: 2;
+			display: none;
+			background-size: cover;
+		}
+
+		
+
+		.ranking .ran_fr {
+			width: 563px;
+			height: 548px;
+			position: absolute;
+			left: 40px;
+			top: 326px;
+			z-index: 16;
+			background: url(img/two/prize_kuang.png) no-repeat;
+		}
+
+		.ranking .ran_fr .paihang {
+			position: absolute;
+			left: 223px;
+			top: 29px;
+		}
+
+		.rank_gift {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+		}
+
+		.ranking .ran_fr .ran_explain {
+			position: absolute;
+			left: 38px;
+			bottom: 157px;
+		}
+
+		.ranking .ran_fr .again_three {
+			position: absolute;
+			left: 113px;
+			bottom: 60px;
+			display: none;
+		}
+
+		.ranking .ran_fr .huojiang_btn {
+			position: absolute;
+			right: 113px;
+			bottom: 60px;
+		}
+
+		.ranking .ran_fr .place {
+			position: absolute;
+			left: 106px;
+			top: 77px;
+			width: 400px;
+			height: 264px;
+		}
+
+		.ranking .ran_fr .place li {
+			height: 36px;
+			padding-left: 24px;
+			position: relative;
+		}
+
+		.ranking .ran_fr .place li.nodash {
+			border: none;
+		}
+
+		.ranking .ran_fr .place li i {
+			height: 36px;
+			line-height: 36px;
+			float: left;
+			font-size: 25px;
+			text-align: right;
+			color: #d9bb7f;
+			font-style: normal;
+			margin-right: 9px;
+		}
+
+		.ranking .ran_fr .place li .ran_name {
+			width: 130px;
+			height: 36px;
+			line-height: 36px;
+			float: left;
+			font-size: 25px;
+			text-align: center;
+			color: #d9bb7f;
+			margin-right: 9px;
+			overflow:hidden;
+		}
+
+		.ranking .ran_fr .place li .ran_score {
+			height: 36px;
+			line-height: 36px;
+			float: left;
+			font-size: 25px;
+			text-align: center;
+			color: #d9bb7f;
+		}
+
+		.ranking .ran_fr .place li .xian {
+			width:315px;
+			position: absolute;
+			left: 18px;
+			top: 34px;
+		}
+
+		.ranking .ran_fr .place li em {
+			height: 36px;
+			line-height: 36px;
+			float: left;
+			font-size: 25px;
+			text-align: center;
+			color: #d9bb7f;
+			font-style: normal;
+		}
+
+		.prize_person {
+			width: 100%;
+			height: 100%;
+			position: relative;
+			background: url(img/two/tm.png) no-repeat;
+			z-index: 2;
+			display: none;
+			background-size: cover;
+		}
+
+		.prize_gift {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+		}
+
+		.prize_person .prize_outer {
+			width: 563px;
+			height: 548px;
+			position: absolute;
+			left: 40px;
+			top: 326px;
+			z-index: 16;
+			background: url(img/two/prize_kuang.png) no-repeat;
+		}
+
+		.prize_person .prize_outer .prize_list {
+			position: absolute;
+			left: 211px;
+			top: 29px;
+		}
+
+		.prize_person .prize_outer .prize_list_person {
+			position: absolute;
+			left: 106px;
+			top: 104px;
+			width: 390px;
+			height: 240px;
+		}
+
+		.prize_person .prize_outer .prize_list_person li {
+			height: 39px;
+			padding-left: 38px;
+			position: relative;
+		}
+
+		.prize_person .prize_outer .prize_list_person li .xian2 {
+			width:310px;
+			position: absolute;
+			left: 32px;
+			top: 30px;
+		}
+
+		.prize_person .prize_outer .prize_list_person li i {
+			/*height: 46px;
+			line-height: 46px;*/
+			float: left;
+			font-size: 24px;
+			text-align: right;
+			color: #d9bb7f;
+			font-style: normal;
+			margin-right: 9px;
+		}
+
+		.prize_person .prize_outer .prize_list_person li.nodash {
+			border: none;
+		}
+
+		.prize_name {
+			width: 135px;
+			/*height: 46px;
+			line-height: 46px;*/
+			float: left;
+			font-size: 24px;
+			text-align: center;
+			color: #d9bb7f;
+			margin-right: 9px;
+		}
+
+		.prize_score {
+			/*height: 46px;
+			line-height: 46px;*/
+			float: left;
+			font-size: 24px;
+			text-align: center;
+			color: #d9bb7f;
+		}
+
+		.prize_person .prize_outer .prize_list_person li em {
+			/*height: 46px;
+			line-height: 46px;*/
+			float: left;
+			font-size: 24px;
+			text-align: center;
+			color: #d9bb7f;
+			font-style: normal;
+		}
+
+		.prize_person .prize_outer .prize_bless {
+			position: absolute;
+			left: 139px;
+			bottom: 162px;
+		}
+
+		.prize_person .prize_outer .prize_again_btn {
+			position: absolute;
+			left: 113px;
+			bottom: 30px;
+			display: none;
+		}
+
+		.prize_person .prize_outer .prize_paihang_btn {
+			position: absolute;
+			right: 113px;
+			bottom: 30px;
+		}
+		.wangqi{
+			position: absolute;
+			right: 113px;
+			bottom: 30px;
+		}
+		.prize_person .prize_no_info {
+			position: absolute;
+			left: 106px;
+			top: 166px;
+		}
+		.noinfo1{
+			position:absolute;
+			left:148px;
+			top:100px;
+
+		}
+
+		.show_word {
+			width: 250px;
+			height: 42px;
+			font-weight: bold;
+			text-align: center;
+			line-height: 42px;
+			color: #FFEDBB;
+			font-size: 42px;
+			position: absolute;
+			left: 0px;
+			top: 0;
+		}
+
+		.show {
+			width: 248px;
+			height: 62px;
+			position: absolute;
+			left: 210px;
+			top: 262px;
+			-webkit-animation-duration:2s;
+			display:none;
+		}
+
+		.new_time {
+			width: 500px;
+			height: 25px;
+			line-height: 25px;
+			text-align: center;
+			font-size: 21px;
+			color: #d9bb7f;
+			position: absolute;
+			left: 43px;
+			top: 73px;
+		}
+		.break{
+			position:absolute;
+			left:244px;
+			top:276px;
+			display:none;
+		}
+
+		/*.zanwu{position:absolute;left:147px;top:157px;}*/
+
+		/***************loading******************/
+		#loading {
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			background: #fff;
+			text-align: center;
+			position: absolute;
+			z-index: 100;
+		}
+
+		#loader {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -62px 0 0 -34px;
+			width: 68px;
+			height: 124px;
+			text-align: center;
+		}
+
+		#loader .word {
+			position: absolute;
+			bottom: -10px;
+			left: 0;
+			width: 68px;
+			height: 20px;
+			text-align: center;
+			line-height: 20px;
+			font-size: 26px;
+			color: #868686;
+		}
+		.prize_today{
+			width:100%;
+			height:30px;
+			text-align: center;
+			line-height:30px;
+			position:absolute;
+			top:380px;
+			font-size: 30px;
+			color:#D9BB7F;
+			font-weight: bold;
+		}
+
+		.gameOutTime {
+			width: 640px;;
+			height: 100%;
+			position: relative;
+			background: url(img/two/tm.png) no-repeat;
+			z-index: 20000;
+			background-size: cover;
+			display:none;
+		}
+
+		.gameOutTime div {
+			padding-top:300px;
+			font-size:40px;
+			color:#d9bb7f;
+			text-align:center;
+		}
+
+		.gameOutTime a {
+			display:block;
+			width:148px;
+			height:87px;
+			margin:50px auto;
+		}
+	</style>
+	<script>
+		var _hmt = _hmt || [];
+		(function () {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?4d7b9bc90689182c0b198d0cf3bdd3a7";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+		})();
+
+		function trackBaidu(str) {
+			_hmt.push(['_trackPageview', '/' + str]);
+		}
+	</script>
+</head>
+<body>
+<!--
+<div id="loading">
+    <div id="loader">
+        <div class="word"></div>
+    </div>
+</div>
+-->
+<div class="music">
+	<audio src="music/002.mp3" loop></audio>
+</div>
+<!-- <audio autobuffer autoloop loop controls>
+    <source src="/media/audio.oga">
+    <source src="/media/audio.wav">
+    <object type="audio/x-wav" data="/media/audio.wav" width="290" height="45">
+        <param name="src" value="/media/audio.wav">
+        <param name="autoplay" value="false">
+        <param name="autoStart" value="0">
+        <p><a href="/media/audio.wav">Download this audio file.</a></p>
+    </object>
+</audio> -->
+<div id="preloadImg" style="display:none;">
+	<img src="img/three/1.png">
+	<img src="img/three/2.png">
+	<img src="img/three/3.png">
+	<img src="img/three/4.png">
+	<img src="img/three/5.png">
+	<img src="img/three/6.png">
+	<img src="img/three/7.png">
+	<img src="img/three/8.png">
+	<img src="img/three/9.png">
+	<img src="img/three/10.png">
+	<img src="img/three/11.png">
+	<img src="img/three/12.png">
+	<img src="img/three/13.png">
+	<img src="img/three/14.png">
+	<img src="img/three/15.png">
+	<img src="img/three/16.png">
+	<img src="img/three/17.png">
+	<img src="img/three/18.png">
+</div>
+
+	
+<div class="container" id="cont">
+
+	<img class="logo" src="img/one/logo.png" alt="">
+	<img class="tuanyuan" src="img/one/tuanyuan.png" alt="">
+	<img class="denglong" src="img/one/denglong.png" alt="">
+	<img class="shuzhi" src="img/one/shuzhi.png" alt="">
+	<img class="solgan" src="img/one/wenzi.png" alt="">
+	<img class="baozu" src="img/one/baozu.png" alt="">
+	<img class="haoyun" src="img/one/haoyun.png" alt="">
+	<a class="enter_game" id="enter_game"><img src="img/one/jinyou.png" alt=""></a>
+	<a class="enter_order" id="enter_order" href="winnerslist.html"><img src="img/two/huojiangbtn.png" alt=""></a>
+	<img class="liwu" src="img/one/liwu.png" alt="">
+	<div class="gameOutTime">
+		<div>
+			<p>活动已经结束<br>请查看获奖名单</p>
+			<a href="winnerslist.html"><img src="img/two/huojiangbtn.png" alt=""></a>
+		</div>
+	</div>
+</div>
+<div class="total" id="total">
+	<img class="logo" src="img/one/logo.png" alt="">
+	<img class="giftgohome" src="img/two/giftgohome.png" alt="">
+	<img class="lantern" id="lantern" src="img/one/denglong.png" alt="">
+	<img class="haoyun" src="img/two/haoyun.png" alt="">
+
+	<div class="seclayer">
+		<!--<img class="rule" src="img/two/guize.png" alt="">-->
+		<div class="show animated">
+			<img class="xiangyun" src="img/two/xiangyun.png" alt=""/>
+			<span class="show_word" id="show_word"></span>
+		</div>
+		<div class="show animated">
+			<img class="xiangyun" src="img/two/xiangyun.png" alt=""/>
+			<span class="show_word" id="show_word"></span>
+		</div>
+		<div class="show animated">
+			<img class="xiangyun" src="img/two/xiangyun.png" alt=""/>
+			<span class="show_word" id="show_word"></span>
+		</div>
+		<div class="show animated">
+			<img class="xiangyun" src="img/two/xiangyun.png" alt=""/>
+			<span class="show_word" id="show_word"></span>
+		</div>
+		<div class="show animated">
+			<img class="xiangyun" src="img/two/xiangyun.png" alt=""/>
+			<span class="show_word" id="show_word"></span>
+		</div>
+		<div class="show animated">
+			<img class="xiangyun" src="img/two/xiangyun.png" alt=""/>
+			<span class="show_word" id="show_word"></span>
+		</div>
+		<div class="show animated">
+			<img class="xiangyun" src="img/two/xiangyun.png" alt=""/>
+			<span class="show_word" id="show_word"></span>
+		</div>
+		<div class="show animated">
+			<img class="xiangyun" src="img/two/xiangyun.png" alt=""/>
+			<span class="show_word" id="show_word"></span>
+		</div>
+		<img class="break" src="img/two/break.png" alt=""/>
+		<div class="result">
+			<div class="scroe">
+				<span class="score_result">分数</span>
+			</div>
+			<div class="time">
+				<span class="time_result">时间</span>
+				<span class="time_number" id="time">60</span>
+			</div>
+		</div>
+		<div class="manageGame">
+			<span id="restart"><img src="img/two/shuaxin.png" alt=""></span>
+			<span id="score">0</span>
+		</div>
+		<div class="gamezone">
+
+			<div id="container">
+
+			</div>
+		</div>
+		<div class="details" id="details">
+			<div class="event" id="event">
+				<img class="details_date" id="details_date" src="img/two/huodongdate.png" alt="">
+				<a class="startbtn" id="start" href="javascript:;"><img src="img/two/stratgame.png" alt=""></a>
+				<a class="det_pai_btn" id="det_pai_btn" href="javascript:;"><img src="img/two/paihangbang_btn.png"
+				                                                                 alt=""></a>
+				<img src="img/two/4.png" alt="" class="countdown" id="countdown">
+
+			</div>
+			<img class="gift" id="gift" src="img/two/gift.png" alt="">
+		</div>
+		<div class="again_one" id="again">
+			<div class="autoplay">
+				<img class="get_score" src="img/two/scroll.png" alt="">
+				<span class="score_result" id="allscore"></span>
+				<a href="javascript:;" class="again_btn" id="again_btn"><img src="img/two/againbutton.png" alt=""></a>
+				<a href="javascript:;" class="Information" id="Information"><img src="img/two/fenxiang.png" alt=""></a>
+				<a href="javascript:;" class="seeranking" id="seeranking"><img src="img/two/paihangbang_btn.png" alt=""></a>
+			</div>
+			<img class="again_one_gift" src="img/two/gift.png" alt="">
+		</div>
+		<div class="fillin" id="fillin">
+			<div class="info_bar">
+				<img class="tianxie" src="img/two/tianxieyuangong.png" alt="">
+
+				<div class="frame">
+					<input type="text" class="name_text" id="name_per">
+					<img src="img/two/name.png" class="name" alt="">
+					<input type="text" maxlength="11" class="name_text" id="mobile">
+					<img class="mobile" src="img/two/mobile.png" alt="">
+					<input type="text" class="name_text" id="jobnum">
+					<img class="gonghao" src="img/two/gonghao.png" alt="">
+					<input type="text" class="name_text" id="email">
+					<img class="email" src="img/two/youxiang.png" alt="">
+					<img class="shuoming" src="img/two/shuoming.png" alt="">
+				</div>
+				<span class="error" id="error"></span>
+				<a href="javascript:;" class="again_two" id="again_two"><img src="img/two/tijiao.png" alt=""></a>
+
+			</div>
+			<img class="fillin_gift" src="img/two/gift.png" alt="">
+		</div>
+		<div class="ranking" id="ranking">
+			<div class="ran_fr">
+
+				<img class="paihang" src="img/two/paihangbang.png" alt="">
+				<ul class="place" id="paihang">
+					<!--  <li><i>第一名</i><span class="ran_name">宋礼来</span><span class="ran_score">8888</span><em>分</em><img class="xian" src="img/two/xian.png" alt=""></li>
+						<li><i>第二名</i><span class="ran_name">宋礼来</span><span class="ran_score">8888</span><em>分</em><img class="xian" src="img/two/xian.png" alt=""></li>
+						<li><i>第三名</i><span class="ran_name">宋礼来</span><span class="ran_score">8888</span><em>分</em><img class="xian" src="img/two/xian.png" alt=""></li>
+						<li><i>第四名</i><span class="ran_name">宋礼来</span><span class="ran_score">8888</span><em>分</em><img class="xian" src="img/two/xian.png" alt=""></li>
+						<li class="nodash"><i>第五名</i><span class="ran_name">宋礼来</span><span class="ran_score">8888</span><em>分</em><img class="xian" src="img/two/xian.png" alt=""></li> -->
+				</ul>
+				<img class="ran_explain" src="img/two/paishuoming.png" alt="">
+				<a class="again_three" id="again_three" href="javascript:;"><img src="img/two/againbutton.png"
+				                                                                 alt=""></a>
+				<a class="again_three" id="btnBack" href="javascript:;"><img src="img/two/btnBack.png" alt=""></a>
+				<a class="again_three" id="btnBackRule" href="javascript:;"><img src="img/two/againbutton.png" alt=""></a>
+				<a class="again_three" id="starGame_btn" href="javascript:;"><img src="img/two/startGame_btn.png" alt=""/></a>
+				<a class="huojiang_btn" id="huojiang_btn" href="javascript:;"><img src="img/two/huojiangbtn.png" alt=""></a>
+			</div>
+			<img class="rank_gift" src="img/two/gift.png" alt="">
+		</div>
+		<div class="prize_person">
+			<div class="prize_outer">
+				<span class="new_time" id="new_time">此为2016年2月5日</span>
+
+				<img class="prize_list" src="img/two/prizelist.png" alt="">
+				<ul class="prize_list_person">
+					 <li><i>第一名</i><span class="prize_name">Yogo</span><span class="prize_score">7794</span><em>分</em><img class="xian2" src="img/two/xian.png" alt=""></li>
+						<li><i>第二名</i><span class="prize_name">蒋&nbsp;妍</span><span class="prize_score">7706</span><em>分</em><img class="xian2" src="img/two/xian.png" alt=""></li>
+						<li><i>第三名</i><span class="prize_name">王晓珺</span><span class="prize_score">7620</span><em>分</em><img class="xian2" src="img/two/xian.png" alt=""></li>
+						<li><i>第四名</i><span class="prize_name">Echo Han</span><span class="prize_score">7620</span><em>分</em><img class="xian2" src="img/two/xian.png" alt=""></li>
+						<li class="nodash"><i>第五名</i><span class="prize_name">julia zhang</span><span class="prize_score">6426</span><em>分</em><img class="xian2" src="img/two/xian.png" alt=""></li>
+						<li><i>第六名</i><span class="prize_name">Jerry Xu</span><span class="prize_score">5826</span><em>分</em><img class="xian2" src="img/two/xian.png" alt=""></li>
+						<li class="nodash"><i>第七名</i><span class="prize_name">最佳颜值...</span><span class="prize_score">5602</span><em>分</em><img class="xian2" src="img/two/xian.png" alt=""></li>
+				</ul>
+				<div class="prize_today">奖品：随机</div>
+				<!-- <img class="prize_no_info" src="img/two/noinfo.png" alt=""> -->
+				<!--<img class="noinfo1" src="img/two/noinfo1.png" alt=""/>-->
+				<!--<img class="prize_bless" src="img/two/prizebless.png" alt="">-->
+				<a class="prize_again_btn" id="prize_again_btn" href="javascript:;"><img src="img/two/againbutton.png" alt=""></a>
+				<a class="prize_again_btn" id="prize_back_btn" href="javascript:;"><img src="img/two/btnBack.png" alt=""></a>
+				<a class="prize_again_btn" id="prize_starGame_btn" href="javascript:;"><img src="img/two/startGame_btn.png" alt=""/></a>
+				<a class="prize_again_btn" id="prize_backRule_btn" href="javascript:;"><img src="img/two/againbutton.png" alt=""></a>
+				<!--<a class="prize_paihang_btn" id="prize_paihang_btn" href="javascript:;"><img-->
+						<!--src="img/two/paihang_btn.png" alt=""></a>-->
+				<a class="wangqi" href="javascript:;"><img src="img/one/wangqi.png" alt=""/></a>
+				<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+				<script src="js/share.js"></script>
+				<script src="js/imagesloaded.pkgd.min.js"></script>
+			</div>
+			<img class="prize_gift" src="img/two/gift.png" alt="">
+		</div>
+	</div>
+</div>
+<script src="js/index.js"></script>
+</body>
+</html>
